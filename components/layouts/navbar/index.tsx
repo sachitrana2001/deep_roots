@@ -51,7 +51,7 @@ const Navbar = () => {
   const pathName = usePathname();
   return (
     <nav className={`z-50 fixed top-0 w-full transition-all duration-300 ${
-      isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+      isScrolled || isOpen ? "bg-white shadow-lg" : "bg-transparent"
     } ` }>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
@@ -66,13 +66,13 @@ const Navbar = () => {
                 return (
                   <li
                     key={index}
-                    className={`px-[10px] py-[4px] mx-[12px]  rounded-md  ${
-                      navlink.route === pathName && isScrolled === true
-                        ? "text-[black] font-[400]"
-                        : isScrolled === true ? "text-[#999797] font-[400]" :"text-[white] font-[400]"
-                    } hover:text-[black]  `}
+                    
                   >
-                    <Link href={navlink.route}>{navlink.title}</Link>
+                    <Link className={` py-[4px] mx-[12px]  ${
+                      navlink.route === pathName && isScrolled === true
+                        ? "text-[black] font-[400] border-animation-black"
+                        : isScrolled === true ? "text-[#999797] font-[400] border-animation-black" : `border-animation-white`
+                    }  `} href={navlink.route}>{navlink.title}</Link>
                   </li>
                 );
               })}
@@ -85,11 +85,11 @@ const Navbar = () => {
               className="inline-flex items-center justify-center p-2 rounded-md "
             >
               <svg
-                className={`${isOpen ? "hidden" : "block"} h-8 w-8`}
+                className={`${isOpen ? "hidden" : "block"}   h-8 w-8`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="white"
+                stroke={`${isScrolled ? "black" : "white"}`}
               >
                 <path
                   strokeLinecap="round"
@@ -116,7 +116,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
+      <div className={`${isOpen ? "block transition-all duration-300" : "hidden"} md:hidden`}>
         <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[white] transition-all duration-300">
           {NAV_LINKS.map((navlink, index) => {
             return (

@@ -2,3 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+.border-animation-white {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+.border-animation-white::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+
+.border-animation-white:hover::after {
+    width: 100%;
+    /* //transition: width .3s; */
+}
+
+.border-animation-black {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+.border-animation-black::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width .3s;
+}
+
+.border-animation-black:hover::after {
+    width: 100%;
+    /* //transition: width .3s; */
+}
