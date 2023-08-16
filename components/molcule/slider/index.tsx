@@ -18,6 +18,7 @@ interface ImageSliderProps {
   slideClass?: string; // Use "slideclass?" instead of "slideclass:{}"
   imageClass?: string;
   arrow?: boolean;
+  breakpoints?: boolean
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({
@@ -26,6 +27,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   slideClass,
   imageClass,
   arrow = false,
+  breakpoints= false,
 }) => {
   return (
     <Swiper
@@ -35,9 +37,23 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
       }}
       modules={[Autoplay]}
       className={customClass}
+      breakpoints={!!breakpoints ? {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      } : {}}
     >
       {images?.map((image, index) => (
-        <SwiperSlide key={index} className={slideClass}>
+        <SwiperSlide key={index} className={slideClass} >
           <Image fill={true} src={image?.src} alt={image?.alt} className={imageClass} />
           <div className="absolute top-0 right-0 left-0 px-5 bottom-0 flex items-center font-semibold text-4xl justify-center py-12 text-[white]">
             {image?.title}

@@ -26,21 +26,24 @@ export default function page() {
   const images = [
     {
       id: 1,
-      src: '/assets/background.jpeg',
+      src: '/assets/Ultratech-Cement-Logo-PNG.png',
       alt: 'Image 1',
-      title: 'Nationwide Event Management Services'
     },
     {
       id: 2,
-      src: '/assets/bg2.jpeg',
+      src: '/assets/dlf.png',
       alt: 'Image 2 ',
-      title: 'Maximize Your ROI with Endless Event Management'
     },
+
     {
       id: 3,
-      src: '/assets/bg4.png',
+      src: '/assets/dainik-bhaskar-logo.svg',
       alt: 'Image 3',
-      title: 'Expert Event Solutions'
+    },
+    {
+      id: 4,
+      src: '/assets/lg.svg',
+      alt: 'Image 4',
     },
   ];
   return (
@@ -54,13 +57,16 @@ export default function page() {
       <section className="w-[100%] flex flex-col align-left px-5 md:px-24 py-10 ">
         <Story StoryData={StoryData} />
       </section>
-      <ImageSlider
-        slideClass="h-screen"
-        class="h-[100px]"
-        images={images}
-        imageClass="object-cover hover:scale-110 transition-all duration-2000 cursor-pointer"
-        arrow={false}
-      />
+      <section className="w-[100%] h-[300px]  lg:h-[400px] px-5  lg:px-24">
+        <p className="text-5xl font-semibold text-center">BIGGEST BRANDS TRUST DEEPROOTS</p>
+        <ImageSlider
+          slideClass="p-20 "
+          class="h-[250px] m-5 shadow-xl rounded-xl lg:m-10"
+          images={images}
+          imageClass="hover:scale-110 transition-all duration-2000 cursor-pointer p-10 w-96 h-48"
+          breakpoints={true}
+        />
+      </section>
     </main>
   );
 }
