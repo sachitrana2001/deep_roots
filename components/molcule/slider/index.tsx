@@ -17,6 +17,7 @@ interface ImageSliderProps {
   images?: { id: number; src: string; alt: string; title?: string }[];
   slideClass?: string; // Use "slideclass?" instead of "slideclass:{}"
   imageClass?: string;
+  arrow?: boolean;
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({
@@ -24,6 +25,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   images,
   slideClass,
   imageClass,
+  arrow = false,
 }) => {
   return (
     <Swiper
@@ -40,15 +42,17 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
           <div className="absolute top-0 right-0 left-0 px-5 bottom-0 flex items-center font-semibold text-4xl justify-center py-12 text-[white]">
             {image?.title}
           </div>
-          <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center py-12 text-[white] lg:bottom-0 ">
-            <Image
-              src="/assets/arrow-down.svg"
-              alt="Logo"
-              width={50}
-              height={50}
-              className="animate-bounce"
-            />
-          </div>
+          {arrow && (
+            <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center py-12 text-[white] lg:bottom-0 ">
+              <Image
+                src="/assets/arrow-down.svg"
+                alt="Logo"
+                width={50}
+                height={50}
+                className="animate-bounce"
+              />
+            </div>
+          )}
         </SwiperSlide>
       ))}
     </Swiper>

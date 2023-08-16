@@ -1,5 +1,6 @@
 'use client';
 import Story from '@/components/features/story';
+import ImageSlider from '@/components/molcule/slider';
 
 export default function page() {
   const StoryData = [
@@ -22,6 +23,26 @@ export default function page() {
       color: 'blue',
     },
   ];
+  const images = [
+    {
+      id: 1,
+      src: '/assets/background.jpeg',
+      alt: 'Image 1',
+      title: 'Nationwide Event Management Services'
+    },
+    {
+      id: 2,
+      src: '/assets/bg2.jpeg',
+      alt: 'Image 2 ',
+      title: 'Maximize Your ROI with Endless Event Management'
+    },
+    {
+      id: 3,
+      src: '/assets/bg4.png',
+      alt: 'Image 3',
+      title: 'Expert Event Solutions'
+    },
+  ];
   return (
     <main>
       <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/bg4.png')] bg-cover lg:h-[400px]">
@@ -33,6 +54,13 @@ export default function page() {
       <section className="w-[100%] flex flex-col align-left px-5 md:px-24 py-10 ">
         <Story StoryData={StoryData} />
       </section>
+      <ImageSlider
+        slideClass="h-screen"
+        class="h-[100px]"
+        images={images}
+        imageClass="object-cover hover:scale-110 transition-all duration-2000 cursor-pointer"
+        arrow={false}
+      />
     </main>
   );
 }
