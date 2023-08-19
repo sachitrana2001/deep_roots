@@ -57,11 +57,11 @@ export default function page() {
       <section className="w-[100%] flex flex-col align-left px-5 md:px-24 py-10 ">
         <Story StoryData={StoryData} />
       </section>
-      <section className="w-[100%] h-[300px]  lg:h-[400px] px-5  lg:px-24">
-        <p className="text-5xl font-semibold text-center">BIGGEST BRANDS TRUST DEEPROOTS</p>
+      <section className="w-[100%] h-[300px] px-5 lg:h-[400px] lg:px-24">
+        <p className="text-4xl font-semibold md:text-center md:text-5xl">BIGGEST BRANDS TRUST DEEPROOTS</p>
         <ImageSlider
           slideClass="p-20 "
-          class="h-[250px] m-5 shadow-xl rounded-xl lg:m-10"
+          class="h-[250px] m-10 shadow-xl rounded-xl "
           images={images}
           imageClass="hover:scale-110 transition-all duration-2000 cursor-pointer p-10 w-96 h-48"
           breakpoints={true}

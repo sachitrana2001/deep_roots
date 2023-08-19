@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Image src="/assets/logo.webp" alt="deep_roots_logo" width={150} height={100} />
+              <Image src={isScrolled ? '/blackLogo.png' : '/whiteLogo.png'} alt="deep_roots_logo" width={150} height={100} />
             </div>
           </div>
           <div className="hidden md:block">
