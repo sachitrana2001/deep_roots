@@ -10,28 +10,28 @@ export default function Home() {
       id: 1,
       src: '/assets/background.jpeg',
       alt: 'Image 1',
-      title: 'Nationwide Event Management Services'
+      title: 'Nationwide Event Management Services',
     },
     {
       id: 2,
-      src: '/assets/bg2.jpeg',
+      src: '/assets/bg3.jpeg',
       alt: 'Image 2 ',
-      title: 'Maximize Your ROI with Endless Event Management'
+      title: 'Maximize Your ROI with Endless Event Management',
     },
     {
       id: 3,
       src: '/assets/bg4.png',
       alt: 'Image 3',
-      title: 'Expert Event Solutions'
+      title: 'Expert Event Solutions',
     },
   ];
   return (
     <main>
       <ImageSlider
         slideClass="h-screen"
-        class="h-screen"
+        class="h-screen "
         images={images}
-        imageClass="object-cover hover:scale-110 transition-all duration-2000 cursor-pointer"
+        imageClass="object-cover hover:scale-110 transition-all duration-2000 cursor-pointer "
       />
       {/* <section className="w-[100%] h-screen bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/background.jpeg')] bg-cover ">
         <div

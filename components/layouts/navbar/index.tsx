@@ -52,14 +52,14 @@ const Navbar = () => {
   return (
     <nav
       className={`z-50 fixed top-0 w-full transition-all duration-300 ${
-        isScrolled || isOpen ? 'bg-white shadow-lg' : 'bg-transparent'
+        (isScrolled  && isOpen) || isScrolled || isOpen ? 'bg-white shadow-lg' : 'bg-transparent'
       } `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Image src={isScrolled ? '/blackLogo.png' : '/whiteLogo.png'} alt="deep_roots_logo" width={150} height={100} />
+              <Image src={(isScrolled  && isOpen) || isScrolled || isOpen ? '/blackLogo.png' : '/whiteLogo.png'} alt="deep_roots_logo" width={150} height={100} />
             </div>
           </div>
           <div className="hidden md:block">
@@ -68,7 +68,7 @@ const Navbar = () => {
                 return (
                   <li key={index}>
                     <Link
-                      className={` py-[4px] mx-[12px]  ${
+                      className={` py-[1px] mx-[12px]  ${
                         navlink.route === pathName && isScrolled === true
                           ? 'text-[black] font-[400] border-animation-black'
                           : isScrolled === true
@@ -84,7 +84,6 @@ const Navbar = () => {
               })}
             </ul>
           </div>
-
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -126,9 +125,9 @@ const Navbar = () => {
         <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[white] transition-all duration-300">
           {NAV_LINKS.map((navlink, index) => {
             return (
-              <li className="text-center mb-2" onClick={toggleMenu} key={index}>
+              <li className="text-center" onClick={toggleMenu} key={index}>
                 <Link
-                  className={`px-[10px] w-[150px] py-[4px] mx-[12px] font-[700]  rounded-md  text-center  mx-auto 
+                  className={`px-[10px] w-[150px] py-[10px] mx-[12px] font-[700]  rounded-md  text-center  mx-auto 
                  ${
                    navlink.route === pathName
                      ? 'text-[black] font-[400]'
