@@ -57,7 +57,7 @@ export default function page() {
       <section className="w-[100%] flex flex-col align-left px-5 md:px-24 py-10 ">
         <Story StoryData={StoryData} />
       </section>
-      <section className="w-[100%] h-[300px] px-5 lg:h-[400px] lg:px-24">
+      <section className="w-[100%] px-5 lg:h-[400px] lg:px-24">
         <p className="text-4xl font-semibold md:text-center md:text-5xl">BIGGEST BRANDS TRUST DEEPROOTS</p>
         <ImageSlider
           slideClass="p-20 "

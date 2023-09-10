@@ -5,29 +5,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-
-const NAV_LINKS = [
-  {
-    title: 'HOME',
-    route: '/',
-  },
-  {
-    title: 'WORK',
-    route: '/work',
-  },
-  {
-    title: 'SERVICES',
-    route: '/services',
-  },
-  {
-    title: 'ABOUT',
-    route: '/about',
-  },
-  {
-    title: 'CONTACT',
-    route: '/contact',
-  },
-];
+import { NAV_LINKS } from '@/app/constant';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -122,12 +100,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`${isOpen ? 'block transition-all duration-300' : 'hidden'} md:hidden`}>
-        <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[white] transition-all duration-300">
+        <ul className="space-y-3 sm:px-3 bg-[white] transition-all duration-300 mb-5">
           {NAV_LINKS.map((navlink, index) => {
             return (
-              <li className="text-center" onClick={toggleMenu} key={index}>
+              <li className="text-center text-xl my-3" onClick={toggleMenu} key={index}>
                 <Link
-                  className={`px-[10px] w-[150px] py-[10px] mx-[12px] font-[700]  rounded-md  text-center  mx-auto 
+                  className={`w-[150px]   rounded-md  text-center
                  ${
                    navlink.route === pathName
                      ? 'text-[black] font-[400]'
