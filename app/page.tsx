@@ -8,26 +8,30 @@ export default function Home() {
   const images = [
     {
       id: 1,
-      src: '/assets/background.jpeg',
+      src: '/assets/bg2.png',
       alt: 'Image 1',
       title: 'Nationwide Event Management Services',
+      color: 'blue',
     },
     {
       id: 2,
       src: '/assets/bg3.jpeg',
       alt: 'Image 2 ',
       title: 'Maximize Your ROI with Endless Event Management',
+      color: 'green',
     },
     {
       id: 3,
-      src: '/assets/bg4.png',
+      src: '/assets/bg4.jpg',
       alt: 'Image 3',
       title: 'Expert Event Solutions',
+      color: 'blue',
     },
   ];
   return (
     <main>
       <ImageSlider
+        arrow
         slideClass="h-screen"
         class="h-screen "
         images={images}
@@ -36,7 +40,7 @@ export default function Home() {
       {/* <section className="w-[100%] h-screen bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/background.jpeg')] bg-cover ">
         <div
           className="w-full h-full flex flex-col  justify-center items-center 
-             bg-blue-600/30 backdrop-brightness-75 px-10 md:px-0"
+              px-10 md:px-0"
         >
           <span className="text-white text-4xl md:text-6xl text-center">
             Event Planning Is Hard

@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function Vision() {
   return (
-    <main className="h-full flex flex-col items-center py-8  px-5 md:flex-row  md:p-24  bg-purple-50 backdrop-brightness-75 ">
-      <aside className='md:w-[50%]'>
+    <main className="h-full flex flex-col items-center py-8  px-5 md:flex-row  md:p-24 bg-[url('/assets/bg2.jpeg')] bg-center bg-no-repeat bg-cover">
+      <aside className='md:w-[50%]  bg-purple-50 backdrop-brightness-75 bg-cover  p-5 opacity-70'>
         <section className='md:px-10'>
           <p className="text-3xl font-bold mb-5 md:text-5xl">Our Vision Of Customer</p>
           <p className='md:leading-loose text-lg'>
