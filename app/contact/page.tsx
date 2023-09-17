@@ -66,7 +66,7 @@ const ContactSection = () => {
                  React Us? Please Drop a Message<br/>
                 </p>
                 <p className="mb-[36px] text-grey-light">
-                  Get in touch and let me know how i can help. Fill out the form and i'll be in
+                  Get in touch and let me know how i can help. Fill out the form and i will be in
                   touch as soon as possible.
                 </p>
 
