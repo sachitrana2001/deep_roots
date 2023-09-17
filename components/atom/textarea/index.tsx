@@ -1,7 +1,7 @@
 import React, { TextareaHTMLAttributes } from "react";
 
 interface TextFieldProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   label: string;
   name: string;
   register: any;

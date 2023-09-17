@@ -4,7 +4,11 @@ import InputField from "@/components/atom/input";
 import TextField from "@/components/atom/textarea";
 import { useForm } from "react-hook-form";
 
-const ContactForm = ({ setState }) => {
+interface ContactFormProps {
+  setState: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ setState }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -14,7 +18,7 @@ const ContactForm = ({ setState }) => {
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = async (userData, e) => {
+  const onSubmit = async (userData: any, e: React.FormEvent) => {
     setIsLoading(true);
     setState((previous) => !previous);
     try {
@@ -32,16 +36,16 @@ const ContactForm = ({ setState }) => {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.target.value = e.target.value.replace(/\D/g, "");
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-[90%] mx-auto">
+    <form onSubmit={(e)=>console.log(e)} className="w-[90%] mx-auto">
       <InputField
         name="name"
         type="text"
-        // icon={<UserIcon />}
+        // icon={<UserIcon />} // Uncomment and provide the appropriate icon component
         label="Name"
         placeholder="Enter your name"
         register={register("name", { required: "*Name is required" })}
@@ -50,7 +54,7 @@ const ContactForm = ({ setState }) => {
 
       <InputField
         name="email"
-        // icon={<EmailIcon />}
+        // icon={<EmailIcon />} // Uncomment and provide the appropriate icon component
         label="Email"
         placeholder="Enter your email"
         type="text"
@@ -66,7 +70,7 @@ const ContactForm = ({ setState }) => {
 
       <InputField
         name="phone"
-        // icon={<PhoneIcon />}
+        // icon={<PhoneIcon />} // Uncomment and provide the appropriate icon component
         label="Phone"
         placeholder="Enter Phone number"
         type="text"
@@ -81,7 +85,7 @@ const ContactForm = ({ setState }) => {
 
       <TextField
         name="message"
-        // icon={<TextareaIcon />}
+        // icon={<TextareaIcon />} // Uncomment and provide the appropriate icon component
         label="Message"
         placeholder="Write message..."
         register={register("message")}
@@ -91,7 +95,7 @@ const ContactForm = ({ setState }) => {
         type="submit"
         className="bg-black text-white w-[100%] h-[44px] my-[16px]"
       >
-        {isLoading ? '<SpinnerIcon />' : "Send"}
+        {isLoading ? "Loading...." : "Send"} {/* Replace with a loading indicator */}
       </Button>
     </form>
   );
