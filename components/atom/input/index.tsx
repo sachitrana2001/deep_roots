@@ -18,7 +18,7 @@ const InputField: React.FC<InputFieldProps> = ({
   errors,
   ...restProps
 }) => {
-  const showError = errors && errors[name];
+  const showError = errors 
 
   return (
     <div className="mb-[28px] w-full">
@@ -40,7 +40,7 @@ const InputField: React.FC<InputFieldProps> = ({
 
         {showError && (
           <div className="absolute bottom-[-25px] left-0 text-red-500 text-[12px]">
-            {errors[name]?.message}
+            {errors?.message}
           </div>
         )}
       </div>
