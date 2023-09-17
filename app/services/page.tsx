@@ -46,9 +46,9 @@ export default function page() {
   ];
   return (
     <main>
-      <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/th.jpeg')] bg-cover lg:h-[400px]">
-        <div className="w-full h-full flex flex-col  justify-center items-center  bg-slate-600/30 backdrop-brightness-75">
-          <span className="text-white text-2xl px-10 md:text-4xl leading-loose text-center md:px-48 animate-bounce">
+      <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/bg5.jpg')] bg-cover lg:h-screen">
+        <div className="w-full h-full flex flex-col  justify-center items-center bg-blue-600/30 backdrop-brightness-75">
+          <span className="text-white text-2xl px-10 md:text-4xl leading-loose text-center md:px-48">
                       A FRESH<span className="text-red-400 ">+Creative</span> APPROACH 
                       <p className="text-xl font-semibold md:text-2xl md:mt-3">TO MAKING YOUR VISION A REALITY.</p>
                   </span>

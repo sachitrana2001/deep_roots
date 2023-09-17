@@ -17,7 +17,7 @@ export default function Home() {
       id: 2,
       src: '/assets/bg3.jpeg',
       alt: 'Image 2 ',
-      title: 'Maximize Your ROI with Endless Event Management',
+      title: 'Maximize Your ROI with Deeproots Event Management',
       color: 'green',
     },
     {

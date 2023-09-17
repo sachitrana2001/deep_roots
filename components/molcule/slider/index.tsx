@@ -49,7 +49,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                 spaceBetween: 40,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 5,
                 spaceBetween: 50,
               },
             }
@@ -60,13 +60,15 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
         <SwiperSlide key={index} className={slideClass}>
           <Image fill={true} src={image?.src} alt={image?.alt} className={imageClass} />
           <div
-            className={`w-full h-full flex flex-col  justify-center items-center  bg-${image.color}-600/30 backdrop-brightness-75
+            className={`w-full h-full flex flex-col  justify-center items-center  ${image?.color ?`bg-${image.color}-600/30 backdrop-brightness-75` : ""}
               px-10 md:px-0`}
           >
-            <div className="absolute top-0 right-0 left-0 px-5 bottom-0 flex items-center font-semibold text-4xl justify-center py-12 text-[white]">
-              {image?.title}
-            </div>
-            {arrow && (
+            {image?.title && (
+              <div className="absolute top-0 right-0 left-0 px-5 bottom-0 flex items-center font-semibold text-4xl justify-center py-12 text-[white]">
+                {image?.title}
+              </div>
+            )}
+            {arrow ? (
               <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center py-12 text-[white] lg:bottom-0 ">
                 <Image
                   src="/assets/arrow-down.svg"
@@ -76,6 +78,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                   className="animate-bounce"
                 />
               </div>
+            ) : (
+              ''
             )}
           </div>
         </SwiperSlide>

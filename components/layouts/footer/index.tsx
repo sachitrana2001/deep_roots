@@ -1,26 +1,8 @@
 import { NAV_LINKS } from '@/app/constant';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { SOCIAL_LOGO } from '@/app/constant';
 const Footer = () => {
-  const SOCIAL_LOGO = [
-    {
-      name: 'Facebook',
-      src: '/assets/fb.png',
-    },
-    {
-      name: 'LinkedIn',
-      src: '/assets/linkedin.png',
-    },
-    {
-      name: 'Instagram',
-      src: '/assets/insta.png',
-    },
-    {
-      name: 'Twitter',
-      src: '/assets/twitter.png',
-    },
-  ];
   const GALLERY_IMAGES = [
     {
       id: 1,
@@ -49,21 +31,21 @@ const Footer = () => {
   ];
   return (
     <>
-      <main className="h-min-h-min bg-black text-white justify-between px-5 py-10 grid grid-rows-3 md:grid-cols-3  md:grid-rows-1 content-center gap-4 md:px-32 py-5">
-        <section className="flex flex-col justify-center">
+      <main className="bg-black text-white justify-between px-5 py-10 grid grid-rows-3 md:grid-cols-3  md:grid-rows-1 content-center gap-4 md:px-32 py-5">
+        <section className="flex flex-col justify-center items-center">
           <Image
             src="/whiteLogo.png"
             alt="deep_roots_logo"
             width={300}
             height={230}
-            className="w-full h-full md:h-40"
+            className="md:h-40"
           />
-          <p className="text-center text-xl md:text-base">
+          <p className="text-center md:text-base">
             The Event Company is the premier event design + production company that specializes in
             corporate, nonprofit + social events. #WeBuildDreams
           </p>
         </section>
-        <section className="flex flex-col justify-center items-center m-5 ">
+        <section className="flex flex-col justify-center items-center m-5">
           <ul className="hidden md:grid grid-cols-3 content-center ml-10 flex items-baseline space-x-4">
             {NAV_LINKS.map((navlink, index) => {
               return (
@@ -75,7 +57,7 @@ const Footer = () => {
               );
             })}
           </ul>
-          <p className="text-5xl text-orange-300 m-10">Follow Us</p>
+          <p className="text-4xl text-orange-300 m-10">Follow Us</p>
           <div className="flex justify-around">
             {SOCIAL_LOGO?.map((image) => (
               <Image
@@ -103,7 +85,7 @@ const Footer = () => {
         </section>
       </main>
       <footer className="text-white bg-black p-5 text-center md:px-32">
-        212 South Phillips Avenue, Suite 200 | Sioux Falls, SD 57104 | Phone: 9888804700 |
+        Chandigarh, India | Phone: 9888804700 |
         surender.kumar@deeproots.in
       </footer>
     </>
