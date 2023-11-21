@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import CountUp from 'react-countup';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import CountUp from "react-countup";
+import { motion } from "framer-motion";
 interface StoryDataItem {
   title: string;
   svg: string;
