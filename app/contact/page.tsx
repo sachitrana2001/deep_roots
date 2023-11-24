@@ -5,6 +5,7 @@ import ContactForm from '@/components/molcule/form';
 import { motion } from 'framer-motion';
 import { SOCIAL_LOGO } from '../constant';
 import Image from 'next/image';
+import FormFields from '@/components/molcule/form';
 
 const CONTACT = [
   {
@@ -63,7 +64,8 @@ const ContactSection = () => {
             <div className="max-w-[100%]  md:max-w-[500px]  flex justify-center items-center  ">
               <div>
                 <p className="font-[700] w-full text-[36px] mb-[20px] text-black ">
-                 React Us? Please Drop a Message<br/>
+                  React Us? Please Drop a Message
+                  <br />
                 </p>
                 <p className="mb-[36px] text-grey-light">
                   Get in touch and let me know how i can help. Fill out the form and i will be in
@@ -105,16 +107,8 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-[100%]  md:max-w-[500px]  bg-white flex justify-center items-center py-[24px] my-[20px]">
-              {showResponse ? (
-                ''
-              ) : (
-                <>
-                  <ContactForm setState={setShowResponse} />
-                  <div className="h-[250px] md:h-[400px] flex flex-col justify-center items-center">
-                  </div>
-                </>
-              )}
+            <div className=" w-[100%]  bg-white py-[24px] my-[20px]">
+              <FormFields />
             </div>
           </motion.div>
         </motion.div>

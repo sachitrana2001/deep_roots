@@ -1,30 +1,28 @@
-import Image from 'next/image';
+import React from 'react';
+import { HOME } from '@/app/constant';
 
-export default function Values() {
+const Values: React.FC = () => {
   return (
-    <main className="h-full flex flex-col items-center py-8  px-5 md:flex-row  md:p-24  ">
-      <aside className="md:w-[50%]">
-        <section className="md:px-10">
-          <p className="text-3xl font-bold mb-5 md:text-5xl">
-            Our Clients !<br />
-            Our Strength !
+      <section className="w-full flex flex-col justify-center  px-5 py-10 md:px-28 md:py-10">
+        <div className="flex flex-col justify-center items-center text-center  py-10">
+          <h3 className="text-3xl pb-5 ">Turning your dreams into unforgettable events</h3>
+          <p className="text-xl pb-5 text-slate-500 ">
+            Our approach to event planning is collaborative, thoughtful, strategic, detailed, and
+            honest.
           </p>
-          <p className="md:leading-loose text-lg">
-            We have been consistently adding value to the business bottom line. We not only help our
-            clients to substantially bring down their costs, but also improve their business
-            processes to get the most out of the flat world dynamics.
-          </p>
-        </section>
-      </aside>
-      <aside className="w-[50%] mt-10 flex items-center justify-center md:-mt-10 md:ml-40 ">
-        <Image
-          src="/assets/value.jpeg"
-          alt="visionImage"
-          height={800}
-          width={200}
-          className="w-[450px] md:h-[400px] transition duration-300 ease-in-out hover:scale-110"
-        />
-      </aside>
-    </main>
+        </div>
+        <div className="grid md:grid-cols-4 gap-8">
+          {HOME.map((item, i) => (
+            <div className="rounded-xl shadow-lg p-5 hover:scale-95 transition" key={i}>
+              <span className="text-red-400 animate-bounce">{item.icon}</span> <br />
+              <br />
+              <h3 className="text-xl">{item.title}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+   
   );
-}
+};
+
+export default Values;

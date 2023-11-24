@@ -2,24 +2,61 @@ import Image from 'next/image';
 
 export default function Vision() {
   return (
-    <main className="h-full flex flex-col items-center py-8  px-5 md:flex-row  md:p-24 bg-[url('/assets/bg2.jpeg')] bg-center bg-no-repeat bg-cover">
-      <aside className='md:w-[50%]  bg-purple-50 backdrop-brightness-75 bg-cover  p-5 opacity-70'>
-        <section className='md:px-10'>
-          <p className="text-3xl font-bold mb-5 md:text-5xl">Our Vision Of Customer</p>
-          <p className='md:leading-loose text-lg'>
-            “To be an innovative organization committed in pursuing excellence and success for
-            customers through information technology”
-          </p>
-          <p className="my-3 md:leading-loose text-lg md:my-6">
-            We believe the synergy between our customers’ visions and business strategies and our
-            technology knowledge world create a dynamic platform to drive our customers’ businesses
-            to greater heights.
-          </p>
-        </section>
-      </aside>
-      <aside className="w-[50%] mt-10 flex items-center justify-center md:-mt-10 md:ml-40 ">
-        <Image src="/assets/vision.png" alt="visionImage" height={800} width={200} className='h-[250px] w-[150px] md:w-[300px] md:h-[500px] transition duration-300 ease-in-out hover:scale-110' />
-      </aside>
-    </main>
+    <section className="px-5 py-10 md:px-32">
+      <h3 className="text-center text-2xl md:text-3xl pt-5">Exceptional Events, Every Time </h3>
+      <p className="text-center text-xl  text-slate-500 pt-5">
+        – Because Your Occasion Deserves Perfection
+      </p>
+      <main className=" md:h-[60vh] grid md:grid-cols-8 md:grid-rows-2 gap-4 py-10">
+        <div className="md:col-span-4 md:row-span-2 relative">
+          <Image
+            src="/assets/bg2.png"
+            width={600}
+            height={400}
+            alt="Image Alt"
+            className="w-full h-full object-cover hover:scale-95 transition-transform duration-300 ease-in-out"
+          />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+            <h1 className="text-4xl font-bold">Your Text Goes Here</h1>
+          </div>
+        </div>
+        <div className="md:row-span-1 md:col-span-4 relative">
+          <Image
+            src="/assets/L2.jpeg"
+            width={1000}
+            height={400}
+            alt="Image Alt"
+            className="w-full h-full object-cover hover:scale-95 transition-transform duration-300 ease-in-out"
+          />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+            <h1 className="text-3xl font-bold">Your Text Goes Here</h1>
+          </div>
+        </div>
+        <div className="md:col-span-2 relative">
+          <Image
+            src="/assets/th.jpeg"
+            width={600}
+            height={400}
+            alt="Image Alt"
+            className="w-full h-full object-cover hover:scale-95 transition-transform duration-300 ease-in-out"
+          />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+            <h1 className="text-2xl font-bold">Your Text Goes Here</h1>
+          </div>
+        </div>
+        <div className="md:col-span-2 relative">
+          <Image
+            src="/assets/bg5.jpg"
+            width={600}
+            height={400}
+            alt="Image Alt"
+            className="w-full h-full object-cover hover:scale-95 transition-transform duration-300 ease-in-out"
+          />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+            <h1 className="text-2xl font-bold">Your Text Goes Here</h1>
+          </div>
+        </div>
+      </main>
+    </section>
   );
 }

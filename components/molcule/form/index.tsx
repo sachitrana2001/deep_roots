@@ -1,104 +1,96 @@
-import React, { useState } from "react";
-import Button from "@/components/atom/button";
-import InputField from "@/components/atom/input";
-import TextField from "@/components/atom/textarea";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { FaUser, FaEnvelope, FaPhone, FaStickyNote } from 'react-icons/fa';
 
-interface ContactFormProps {
-  setState: React.Dispatch<React.SetStateAction<boolean>>;
+// Define dynamic field configurations with react-icons
+interface FieldConfig {
+  name: string;
+  label: string;
+  type: string;
+  icon: any;
+  // other field configuration properties...
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ setState }) => {
-  const [isLoading, setIsLoading] = useState(false);
+const fieldConfigurations: FieldConfig[] = [
+  { name: 'name', label: 'Name', type: 'text', icon: <FaUser /> },
+  { name: 'email', label: 'Email', type: 'email', icon: <FaEnvelope /> },
+  { name: 'phoneNumber', label: 'Phone Number', type: 'number', icon: <FaPhone /> },
+  { name: 'message', label: 'Message', type: 'textArea', icon: <FaStickyNote /> },
+];
+// Create validation schema dynamically based on field configurations
+const validationSchema = Yup.object().shape(
+  fieldConfigurations.reduce((acc, field) => {
+    acc[field.name] = Yup.string().required(`${field.label} is required`);
+    return acc;
+  }, {} as Record<string, any>)
+);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isValid },
-  } = useForm({ mode: "onChange" });
+const initialValues = {
+  email: '',
+  message: '',
+  name: '',
+  phoneNumber: '',
+};
 
-  const onSubmit = async (userData: any, e: React.FormEvent) => {
-    setIsLoading(true);
-    setState((previous) => !previous);
-    try {
-      // Perform your actions here, e.g., sending data to the server
-      // Example: const response = await sendFormDataToServer(userData);
-      // Handle success or error based on your API response
-      // For now, we'll simulate a successful submission and reset the form
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate an async operation
-      reset();
-    } catch (error) {
-      console.error(error); // Handle the error appropriately
-    } finally {
-      setIsLoading(false);
-      setState((previous) => !previous);
-    }
-  };
+const FormFields: React.FC = () => {
+  const handleSubmit = (values: typeof initialValues) => {
+    // Log form values (replace with your own logic)
+    console.log('Form Values:', values);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.target.value = e.target.value.replace(/\D/g, "");
-  };
+    // Create the email body with form values
+    console.log('Form Values:', values);
 
+  // Create the email body with form values
+  const emailBody = Object.entries(values)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join('\n');
+
+  // Create the mailto link
+  const mailtoLink = `mailto:ranasachit2001jan@gmail.com?subject=Form Submission&body=${encodeURIComponent(
+    emailBody
+  )}`;
+
+  // Log the mailto link instead of opening it
+  console.log('Mailto Link:', mailtoLink);
+
+  // For testing purposes, you might want to remove the following line in production
+  // window.location.href = mailtoLink;
+};
   return (
-    <form onSubmit={(e)=>console.log(e)} className="w-[90%] mx-auto">
-      <InputField
-        name="name"
-        type="text"
-        // icon={<UserIcon />} // Uncomment and provide the appropriate icon component
-        label="Name"
-        placeholder="Enter your name"
-        register={register("name", { required: "*Name is required" })}
-        errors={errors}
-      />
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      <Form>
+        {fieldConfigurations.map((field, index) => (
+          <div key={index} className="mb-3">
+            <label htmlFor={field.name} className="block mb-2 text-sm font-medium text-gray-900">
+              {field.label}
+            </label>
+            <div className="relative ">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                {field.icon}
+              </div>
+              <Field
+                type={field.type}
+                id={field.name}
+                name={field.name}
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-800 focus:border-slate-800 block w-full ps-10 p-2.5 "
+                placeholder={`Enter Your ${field.label}`}
+              />
+            </div>
+            <ErrorMessage name={field.name} component="div" className="text-red-500 text-[10px]" />
+          </div>
+        ))}
 
-      <InputField
-        name="email"
-        // icon={<EmailIcon />} // Uncomment and provide the appropriate icon component
-        label="Email"
-        placeholder="Enter your email"
-        type="text"
-        register={register("email", {
-          required: "*Email is required",
-          pattern: {
-            value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
-            message: "Invalid email address",
-          },
-        })}
-        errors={errors}
-      />
-
-      <InputField
-        name="phone"
-        // icon={<PhoneIcon />} // Uncomment and provide the appropriate icon component
-        label="Phone"
-        placeholder="Enter Phone number"
-        type="text"
-        register={register("phone", {
-          required: "*Phone is required",
-          minLength: { value: 10, message: "Min length should be 10" },
-          maxLength: { value: 10, message: "Max length should be 10" },
-        })}
-        onInput={handleInputChange}
-        errors={errors}
-      />
-
-      <TextField
-        name="message"
-        // icon={<TextareaIcon />} // Uncomment and provide the appropriate icon component
-        label="Message"
-        placeholder="Write message..."
-        register={register("message")}
-      />
-
-      <Button
-        type="submit"
-        className="bg-black text-white w-[100%] h-[44px] my-[16px]"
-      >
-        {isLoading ? "Loading...." : "Send"} {/* Replace with a loading indicator */}
-      </Button>
-    </form>
+        <button type="submit" className="bg-slate-900 text-white px-4 py-2 rounded">
+          Submit Your Details
+        </button>
+      </Form>
+    </Formik>
   );
 };
 
-export default ContactForm;
+export default FormFields;

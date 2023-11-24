@@ -30,14 +30,25 @@ const Navbar = () => {
   return (
     <nav
       className={`z-50 fixed top-0 w-full transition-all duration-300 ${
-        (isScrolled  && isOpen) || isScrolled || isOpen ? 'bg-white shadow-lg' : 'bg-transparent'
+        (isScrolled && isOpen) || isScrolled || isOpen
+          ? 'bg-white shadow-lg opacity-7'
+          : 'bg-transparent'
       } `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Image src={(isScrolled  && isOpen) || isScrolled || isOpen ? '/blackLogo.png' : '/whiteLogo.png'} alt="deep_roots_logo" width={150} height={100} />
+              <Image
+                src={
+                  (isScrolled && isOpen) || isScrolled || isOpen
+                    ? '/blackLogo.png'
+                    : '/whiteLogo.png'
+                }
+                alt="deep_roots_logo"
+                width={150}
+                height={100}
+              />
             </div>
           </div>
           <div className="hidden md:block">
