@@ -88,9 +88,10 @@ const ContactSection = () => {
                   {SOCIAL_LOGO.map((social, index) => {
                     return (
                       <a
-                        className=" bg-[black]  h-[40px] w-[40px] flex justify-center items-center rounded-[50%] shadow-2xl"
-                        //   href={social.link}
+                        className=" bg-[black] h-[40px] w-[40px] flex justify-center items-center rounded-[50%] shadow-2xl"
+                        href={social.link}
                         target="_blank"
+                        rel="noopener noreferrer"
                         key={index}
                       >
                         <Image

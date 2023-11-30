@@ -1,6 +1,7 @@
 'use client';
 import Story from '@/components/features/story';
 import ImageSlider from '@/components/molcule/slider';
+import { COMPANY_LOGOS } from '../constant';
 
 export default function page() {
   const StoryData = [
@@ -23,39 +24,7 @@ export default function page() {
       color: 'blue',
     },
   ];
-  const images = [
-    {
-      id: 1,
-      src: '/assets/Ultratech-Cement-Logo-PNG.png',
-      alt: 'Image 1',
-    },
-    {
-      id: 2,
-      src: '/assets/dlf.png',
-      alt: 'Image 2 ',
-    },
 
-    {
-      id: 3,
-      src: '/assets/dainik-bhaskar-logo.svg',
-      alt: 'Image 3',
-    },
-    {
-      id: 4,
-      src: '/assets/lg.svg',
-      alt: 'Image 4',
-    },
-    {
-      id: 5,
-      src: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Vivo_Logo.svg',
-      alt: 'Image 5',
-    },
-    {
-      id: 6,
-      src: '/assets/farmtrac.svg',
-      alt: 'Image 6',
-    },
-  ];
   return (
     <main>
       <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/bg2.png')] bg-cover lg:h-[400px]">
@@ -73,7 +42,7 @@ export default function page() {
         <ImageSlider
           slideClass="p-20 "
           class="h-[250px] m-10 shadow-xl rounded-xl md:h-[250px]"
-          images={images}
+          images={COMPANY_LOGOS}
           imageClass="hover:scale-110 transition-all duration-2000 cursor-pointer p-10 w-96 h-48 object-contain"
           breakpoints={true}
         />

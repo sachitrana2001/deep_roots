@@ -57,17 +57,59 @@ export const SOCIAL_LOGO = [
   {
     name: 'Facebook',
     src: '/assets/fb.png',
+    link:'https://www.facebook.com/deeprootsevents/',
   },
   {
     name: 'LinkedIn',
     src: '/assets/linkedin.png',
+    link: 'https://www.linkedin.com/in/surender-kumar-50b774a9/'
   },
   {
     name: 'Instagram',
     src: '/assets/insta.png',
+    link:'https://www.instagram.com/deeproots_events/',
   },
   {
     name: 'Twitter',
     src: '/assets/twitter.png',
+  },
+  {
+    name: 'Whatsapp',
+    src: '/assets/whatsapp.png',
+    link:"whatsapp://send?phone=9915264107",
+  },
+];
+
+export const COMPANY_LOGOS = [
+  {
+    id: 1,
+    src: '/assets/Ultratech-Cement-Logo-PNG.png',
+    alt: 'Image 1',
+  },
+  {
+    id: 2,
+    src: '/assets/dlf.png',
+    alt: 'Image 2 ',
+  },
+
+  {
+    id: 3,
+    src: '/assets/dainik-bhaskar-logo.svg',
+    alt: 'Image 3',
+  },
+  {
+    id: 4,
+    src: '/assets/lg.svg',
+    alt: 'Image 4',
+  },
+  {
+    id: 5,
+    src: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Vivo_Logo.svg',
+    alt: 'Image 5',
+  },
+  {
+    id: 6,
+    src: '/assets/farmtrac.svg',
+    alt: 'Image 6',
   },
 ];
