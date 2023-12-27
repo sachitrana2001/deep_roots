@@ -57,17 +57,17 @@ export const SOCIAL_LOGO = [
   {
     name: 'Facebook',
     src: '/assets/fb.png',
-    link:'https://www.facebook.com/deeprootsevents/',
+    link: 'https://www.facebook.com/deeprootsevents/',
   },
   {
     name: 'LinkedIn',
     src: '/assets/linkedin.png',
-    link: 'https://www.linkedin.com/in/surender-kumar-50b774a9/'
+    link: 'https://www.linkedin.com/in/surender-kumar-50b774a9/',
   },
   {
     name: 'Instagram',
     src: '/assets/insta.png',
-    link:'https://www.instagram.com/deeproots_events/',
+    link: 'https://www.instagram.com/deeproots_events/',
   },
   {
     name: 'Twitter',
@@ -76,7 +76,7 @@ export const SOCIAL_LOGO = [
   {
     name: 'Whatsapp',
     src: '/assets/whatsapp.png',
-    link:"whatsapp://send?phone=9915264107",
+    link: 'whatsapp://send?phone=9915264107',
   },
 ];
 
@@ -110,6 +110,40 @@ export const COMPANY_LOGOS = [
   {
     id: 6,
     src: '/assets/farmtrac.svg',
+    alt: 'Image 6',
+  },
+];
+
+export const GALLERY = [
+  {
+    id: 1,
+    src: '/assets/bg1.png',
+    alt: 'Image 1',
+  },
+  {
+    id: 2,
+    src: '/assets/bg2.png',
+    alt: 'Image 2 ',
+  },
+
+  {
+    id: 3,
+    src: '/assets/bg3.png',
+    alt: 'Image 3',
+  },
+  {
+    id: 4,
+    src: '/assets/bg4.png',
+    alt: 'Image 4',
+  },
+  {
+    id: 5,
+    src: '/assets/bg1.png',
+    alt: 'Image 5',
+  },
+  {
+    id: 6,
+    src: '/assets/bg2.png',
     alt: 'Image 6',
   },
 ];

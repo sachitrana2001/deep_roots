@@ -6,13 +6,13 @@ const Footer = () => {
   const GALLERY_IMAGES = [
     {
       id: 1,
-      src: '/assets/background.jpeg',
+      src: '/assets/bg1.png',
       alt: 'Image 1',
       title: 'Nationwide Event Management Services',
     },
     {
       id: 2,
-      src: '/assets/bg3.jpeg',
+      src: '/assets/bg2.png',
       alt: 'Image 2 ',
       title: 'Maximize Your ROI with Endless Event Management',
     },
@@ -24,7 +24,7 @@ const Footer = () => {
     },
     {
       id: 4,
-      src: '/assets/background.jpeg',
+      src: '/assets/bg3.png',
       alt: 'Image 1',
       title: 'Nationwide Event Management Services',
     },
@@ -60,7 +60,7 @@ const Footer = () => {
           <p className="text-4xl text-orange-300 m-10">Follow Us</p>
           <div className="flex justify-around">
             {SOCIAL_LOGO?.map((image) => (
-              <Image
+              <img
                 className="mx-2 cursor-pointer"
                 key={image.name}
                 src={image.src}

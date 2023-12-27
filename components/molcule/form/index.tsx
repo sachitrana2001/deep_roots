@@ -1,8 +1,8 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+import emailjs from "@emailjs/browser";
 import * as Yup from 'yup';
 import { FaUser, FaEnvelope, FaPhone, FaStickyNote } from 'react-icons/fa';
-
 // Define dynamic field configurations with react-icons
 interface FieldConfig {
   name: string;
@@ -41,19 +41,22 @@ const FormFields: React.FC = () => {
     // Create the email body with form values
     console.log('Form Values:', values);
 
-  // Create the email body with form values
-  const emailBody = Object.entries(values)
-    .map(([key, value]) => `${key}: ${value}`)
-    .join('\n');
-
-  // Create the mailto link
-  const mailtoLink = `mailto:ranasachit2001jan@gmail.com?subject=Form Submission&body=${encodeURIComponent(
-    emailBody
-  )}`;
-
-  // Log the mailto link instead of opening it
-  console.log('Mailto Link:', mailtoLink);
-
+    emailjs
+    .sendForm(
+      "service_6ekxd05",
+      "template_r5bsb4h",
+      values.name,
+      "M7lxxIWPV689inK7H"
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+        
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   // For testing purposes, you might want to remove the following line in production
   // window.location.href = mailtoLink;
 };

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Vision() {
   return (
@@ -46,7 +46,7 @@ export default function Vision() {
         </div>
         <div className="md:col-span-2 relative">
           <Image
-            src="/assets/bg5.jpg"
+            src="/assets/bg5.png"
             width={600}
             height={400}
             alt="Image Alt"
