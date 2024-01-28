@@ -1,3 +1,4 @@
+import ServicesSection from "@/components/features/services";
 import CurvedSlider from "@/components/molcule/curvedSlider";
 
 export default function page() {
@@ -46,7 +47,7 @@ export default function page() {
   ];
   return (
     <main>
-      <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/bg5.jpg')] bg-cover lg:h-screen">
+      <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/bg5.png')] bg-cover lg:h-[50vh]">
         <div className="w-full h-full flex flex-col  justify-center items-center bg-blue-600/30 backdrop-brightness-75">
           <span className="text-white text-2xl px-10 md:text-4xl leading-loose text-center md:px-48">
                       A FRESH<span className="text-red-400 ">+Creative</span> APPROACH 
@@ -55,6 +56,7 @@ export default function page() {
           {/* <span className="text-white text-center text-4xl mt-2 md:text-6xl  mt-5 md:p-0">We Can Help You</span> */}
         </div>
       </section>
+      <ServicesSection/>
       <CurvedSlider/>
     </main>
   );
