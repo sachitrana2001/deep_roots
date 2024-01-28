@@ -16,7 +16,7 @@ const CurvedSlider = () => {
       onSwiper={(swiper) => console.log(swiper)}
     >
       {Array.from({ length: 20 }).map((res, index) => (
-        <SwiperSlide>
+        <SwiperSlide key={index}>
           <img
             alt=""
             key={index}
