@@ -1,4 +1,4 @@
-
+import CurvedSlider from "@/components/molcule/curvedSlider";
 
 export default function page() {
   const StoryData = [
@@ -55,7 +55,7 @@ export default function page() {
           {/* <span className="text-white text-center text-4xl mt-2 md:text-6xl  mt-5 md:p-0">We Can Help You</span> */}
         </div>
       </section>
-      
+      <CurvedSlider/>
     </main>
   );
 }
