@@ -11,6 +11,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 
 // 'swiper/css/swiper.css';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface ImageSliderProps {
   class?: string; // Use "class?" instead of "class:{}"
@@ -64,9 +65,14 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
               px-10 md:px-0`}
           >
             {image?.title && (
-              <div className="absolute top-0 right-0 left-0 px-5 bottom-0 flex items-center font-semibold text-4xl justify-center py-12 text-[white]">
+              <motion.div  initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.25,
+                delay: 1 / 10,
+              }}className="absolute top-0 right-0 left-0 px-5 bottom-0 flex items-center font-semibold text-4xl justify-center py-12 text-[white]">
                 {image?.title}
-              </div>
+              </motion.div>
             )}
             {arrow ? (
               <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center py-12 text-[white] lg:bottom-0 ">

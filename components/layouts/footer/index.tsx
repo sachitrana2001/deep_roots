@@ -1,32 +1,35 @@
-import { NAV_LINKS } from '@/app/constant';
-import Image from 'next/image';
-import Link from 'next/link';
-import { SOCIAL_LOGO } from '@/app/constant';
+"use client"
+import { NAV_LINKS } from "@/app/constant";
+import Image from "next/image";
+import Link from "next/link";
+import { SOCIAL_LOGO } from "@/app/constant";
+import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 const Footer = () => {
   const GALLERY_IMAGES = [
     {
       id: 1,
-      src: '/assets/bg1.png',
-      alt: 'Image 1',
-      title: 'Nationwide Event Management Services',
+      src: "/assets/bg1.png",
+      alt: "Image 1",
+      title: "Nationwide Event Management Services",
     },
     {
       id: 2,
-      src: '/assets/bg2.png',
-      alt: 'Image 2 ',
-      title: 'Maximize Your ROI with Endless Event Management',
+      src: "/assets/bg2.png",
+      alt: "Image 2 ",
+      title: "Maximize Your ROI with Endless Event Management",
     },
     {
       id: 3,
-      src: '/assets/bg4.png',
-      alt: 'Image 3',
-      title: 'Expert Event Solutions',
+      src: "/assets/bg4.png",
+      alt: "Image 3",
+      title: "Expert Event Solutions",
     },
     {
       id: 4,
-      src: '/assets/bg3.png',
-      alt: 'Image 1',
-      title: 'Nationwide Event Management Services',
+      src: "/assets/bg3.png",
+      alt: "Image 1",
+      title: "Nationwide Event Management Services",
     },
   ];
   return (
@@ -41,8 +44,20 @@ const Footer = () => {
             className="md:h-40"
           />
           <p className="text-center md:text-base">
-            The Event Company is the premier event design + production company that specializes in
-            corporate, nonprofit + social events. #WeBuildDreams
+          
+            <Typewriter
+              words={[
+                `The Event Company is the premier event design + production company
+                that specializes in corporate, nonprofit + social events.
+                #WeBuildDreams`,
+              ]}
+              cursor
+              cursorStyle="_"
+              typeSpeed={5}
+              deleteSpeed={5}
+              loop={100}
+              delaySpeed={10000}
+            />
           </p>
         </section>
         <section className="flex flex-col justify-center items-center m-5">
@@ -50,7 +65,10 @@ const Footer = () => {
             {NAV_LINKS.map((navlink, index) => {
               return (
                 <li key={index}>
-                  <Link className="border-animation-white text-xl" href={navlink.route}>
+                  <Link
+                    className="border-animation-white text-xl"
+                    href={navlink.route}
+                  >
                     {navlink.title}
                   </Link>
                 </li>
@@ -59,10 +77,21 @@ const Footer = () => {
           </ul>
           <p className="text-4xl text-orange-300 m-10">Follow Us</p>
           <div className="flex justify-around">
-            {SOCIAL_LOGO?.map((image) => (
-              <img
+            {SOCIAL_LOGO?.map((image, i) => (
+              <motion.img
+                key={i}
+                whileInView={{
+                  y: [50, 0],
+                  opacity: [0, 1],
+                }}
+                transition={{
+                  delay: 0.2 + 0.1 * i,
+                  duration: 0.4,
+                  type: "spring",
+                  damping: 6,
+                  stiffness: 50,
+                }}
                 className="mx-2 cursor-pointer"
-                key={image.name}
                 src={image.src}
                 alt={image.name}
                 width={30}
@@ -85,8 +114,7 @@ const Footer = () => {
         </section>
       </main>
       <footer className="text-white bg-black p-5 text-center md:px-32">
-        Chandigarh, India | Phone: 9888804700 |
-        surender.kumar@deeproots.in
+        Chandigarh, India | Phone: 9888804700 | surender.kumar@deeproots.in
       </footer>
     </>
   );

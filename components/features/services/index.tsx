@@ -2,16 +2,19 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { isEvenMinute } from "@/app/utils";
 
 const features = [
   {
     title: "ARTIST MANAGEMENT",
-    img: "/assets/bg1.png",
+    img:"/assets/artist1.webp",
+    img2: "/assets/artist2.webp",
     content: `Discover seamless artist management services that elevate your events to new heights. From coordinating performers and handling logistics to drawing contracts and providing technical expertise, we ensure a captivating and unforgettable experience for your audience. Trust our expertise to scout and bring exceptional talent, cater to backstage needs and create extraordinary moments that leave a lasting impression.`,
   },
   {
     title: "LED DISPLAY",
     img: "/assets/bg1.png",
+    img2:"/assets/bg2.png",
     content: `Immerse yourself in the action with our cutting-edge LED screens in stadiums. Experience high-definition visuals, real-time updates, sponsor messages and captivating replays that enhance the thrill of the game. Be part of an unparalleled spectator experience that brings the stadium to life like never before.`,
   },
   {
@@ -88,7 +91,7 @@ const ServicesSection = () => {
           >
             <img
               alt={feature.title}
-              src={feature?.img}
+              src={isEvenMinute() && feature.img2 ? feature?.img2 :feature?.img }
               className={`cursor-pointer w-full h-full object-cover sm:max-w-[420px] border-8 border-black hover:scale-100`}
             />
           </div>
