@@ -1,8 +1,8 @@
-import React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import React from "react";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import emailjs from "@emailjs/browser";
-import * as Yup from 'yup';
-import { FaUser, FaEnvelope, FaPhone, FaStickyNote } from 'react-icons/fa';
+import * as Yup from "yup";
+import { FaUser, FaEnvelope, FaPhone, FaStickyNote } from "react-icons/fa";
 // Define dynamic field configurations with react-icons
 interface FieldConfig {
   name: string;
@@ -13,10 +13,20 @@ interface FieldConfig {
 }
 
 const fieldConfigurations: FieldConfig[] = [
-  { name: 'name', label: 'Name', type: 'text', icon: <FaUser /> },
-  { name: 'email', label: 'Email', type: 'email', icon: <FaEnvelope /> },
-  { name: 'phoneNumber', label: 'Phone Number', type: 'number', icon: <FaPhone /> },
-  { name: 'message', label: 'Message', type: 'textArea', icon: <FaStickyNote /> },
+  { name: "name", label: "Name", type: "text", icon: <FaUser /> },
+  { name: "email", label: "Email", type: "email", icon: <FaEnvelope /> },
+  {
+    name: "phoneNumber",
+    label: "Phone Number",
+    type: "number",
+    icon: <FaPhone />,
+  },
+  {
+    name: "message",
+    label: "Message",
+    type: "textArea",
+    icon: <FaStickyNote />,
+  },
 ];
 // Create validation schema dynamically based on field configurations
 const validationSchema = Yup.object().shape(
@@ -27,49 +37,52 @@ const validationSchema = Yup.object().shape(
 );
 
 const initialValues = {
-  email: '',
-  message: '',
-  name: '',
-  phoneNumber: '',
+  email: "",
+  message: "",
+  name: "",
+  phoneNumber: "",
 };
 
 const FormFields: React.FC = () => {
   const handleSubmit = (values: typeof initialValues) => {
     // Log form values (replace with your own logic)
-    console.log('Form Values:', values);
+    console.log("Form Values:", values);
 
     // Create the email body with form values
-    console.log('Form Values:', values);
+    console.log("Form Values:", values);
 
     emailjs
-    .sendForm(
-      "service_6ekxd05",
-      "template_r5bsb4h",
-      values.name,
-      "M7lxxIWPV689inK7H"
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
-  // For testing purposes, you might want to remove the following line in production
-  // window.location.href = mailtoLink;
-};
+      .sendForm(
+        "service_6ekxd05",
+        "template_r5bsb4h",
+        values.name,
+        "M7lxxIWPV689inK7H"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    // For testing purposes, you might want to remove the following line in production
+    // window.location.href = mailtoLink;
+  };
   return (
     <Formik
+      className="w-full"
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form>
+      <Form className="h-full flex flex-col justify-between item-center">
         {fieldConfigurations.map((field, index) => (
           <div key={index} className="mb-3">
-            <label htmlFor={field.name} className="block mb-2 text-sm font-medium text-gray-900">
+            <label
+              htmlFor={field.name}
+              className="block mb-2 text-sm font-medium text-gray-900"
+            >
               {field.label}
             </label>
             <div className="relative ">
@@ -84,13 +97,21 @@ const FormFields: React.FC = () => {
                 placeholder={`Enter Your ${field.label}`}
               />
             </div>
-            <ErrorMessage name={field.name} component="div" className="text-red-500 text-[10px]" />
+            <ErrorMessage
+              name={field.name}
+              component="div"
+              className="text-red-500 text-[10px]"
+            />
           </div>
         ))}
-
-        <button type="submit" className="bg-slate-900 text-white px-4 py-2 rounded">
-          Submit Your Details
-        </button>
+        <section className="flex items-center justify-center">
+          <button
+            type="submit"
+            className="bg-rose-600 text-white px-4 py-2 rounded-xl w-80 "
+          >
+            Submit Your Details
+          </button>
+        </section>
       </Form>
     </Formik>
   );

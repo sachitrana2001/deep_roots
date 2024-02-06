@@ -88,14 +88,14 @@ const ContactSection = () => {
                   {SOCIAL_LOGO.map((social, index) => {
                     return (
                       <a
-                        className=" bg-[black] h-[40px] w-[40px] flex justify-center items-center rounded-[50%] shadow-2xl"
+                        className=" bg-[black] h-[50px] w-[50px] flex justify-center items-center rounded-[50%] shadow-2xl"
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         key={index}
                       >
                         <Image
-                          className="mx-2 cursor-pointer"
+                          className="mx-2 cursor-pointer animate-bounce"
                           key={social.name}
                           src={social.src}
                           alt={social.name}
@@ -108,7 +108,7 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-[100%]  bg-white py-[24px] my-[20px]">
+            <div className=" w-[100%] rounded-2xl shadow-xl bg-black p-5 ">
               <FormFields />
             </div>
           </motion.div>
