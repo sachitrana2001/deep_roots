@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import ContactForm from '@/components/molcule/form';
-import { motion } from 'framer-motion';
-import { SOCIAL_LOGO } from '../constant';
-import Image from 'next/image';
-import FormFields from '@/components/molcule/form';
+import { useState } from "react";
+import ContactForm from "@/components/molcule/form";
+import { motion } from "framer-motion";
+import { SOCIAL_LOGO } from "../constant";
+import Image from "next/image";
+import FormFields from "@/components/molcule/form";
 
 const CONTACT = [
   {
-    title: 'Address',
-    discription: 'chandigarh, India',
+    title: "Address",
+    discription: "chandigarh, India",
   },
   {
-    title: 'Phone',
-    discription: '+91 9888804700',
+    title: "Phone",
+    discription: "+91 9888804700",
   },
   {
-    title: 'Email',
-    discription: 'surender.kumar@deeproots.in',
+    title: "Email",
+    discription: "surender.kumar@deeproots.in",
   },
 ];
 
@@ -27,10 +27,10 @@ const ContactSection = () => {
 
   return (
     <main>
-      <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/th.jpeg')] bg-cover lg:h-[400px]">
-        <div className="w-full h-full flex flex-col  justify-center items-center bg-slate-600/30 backdrop-brightness-75">
+      <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/ContactUs.jpg')] bg-cover lg:h-[400px]">
+        <div className="w-full h-full flex flex-col  justify-center items-center bg-slate-900/20 backdrop-brightness-50">
           <span className="text-white text-2xl px-10 md:text-4xl leading-loose text-center md:px-48">
-            A FRESH<span className="text-red-400 ">+Creative</span> APPROACH
+           Contact US
             <p className="text-xl font-semibold md:text-2xl md:mt-3">
               TO MAKING YOUR VISION A REALITY.
             </p>
@@ -38,7 +38,7 @@ const ContactSection = () => {
           {/* <span className="text-white text-center text-4xl mt-2 md:text-6xl  mt-5 md:p-0">We Can Help You</span> */}
         </div>
       </section>
-      <section className=" w-full mb-[120px] ">
+      <section className="w-full my-20">
         <motion.div
           initial="offscreen"
           whileInView="onscreen"
@@ -59,7 +59,9 @@ const ContactSection = () => {
                 },
               },
             }}
-            className={'max-w-[1200px]  flex  flex-col  justify-around p-4  md:flex-row   mx-auto'}
+            className={
+              "max-w-[1200px] flex flex-col justify-around p-4 md:flex-row mx-auto"
+            }
           >
             <div className="max-w-[100%]  md:max-w-[500px]  flex justify-center items-center  ">
               <div>
@@ -68,8 +70,8 @@ const ContactSection = () => {
                   <br />
                 </p>
                 <p className="mb-[36px] text-grey-light">
-                  Get in touch and let me know how i can help. Fill out the form and i will be in
-                  touch as soon as possible.
+                  Get in touch and let me know how i can help. Fill out the form
+                  and i will be in touch as soon as possible.
                 </p>
 
                 {CONTACT.map((contact, index) => {
@@ -77,8 +79,12 @@ const ContactSection = () => {
                     <div key={index} className="mb-[16px] flex">
                       {/* <div className="mr-[18px]"> {<contact.icon />}</div> */}
                       <ul>
-                        <h3 className="font-[700] text-black">{contact.title}</h3>
-                        <li className="text-grey-light text-[14px]">{contact.discription}</li>
+                        <h3 className="font-[700] text-black">
+                          {contact.title}
+                        </h3>
+                        <li className="text-grey-light text-[14px]">
+                          {contact.discription}
+                        </li>
                       </ul>
                     </div>
                   );

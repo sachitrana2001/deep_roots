@@ -24,7 +24,7 @@ const fieldConfigurations: FieldConfig[] = [
   {
     name: "message",
     label: "Message",
-    type: "textArea",
+    type: "textarea",
     icon: <FaStickyNote />,
   },
 ];
@@ -81,7 +81,7 @@ const FormFields: React.FC = () => {
           <div key={index} className="mb-3">
             <label
               htmlFor={field.name}
-              className="block mb-2 text-sm font-medium text-gray-900"
+              className="block mb-2 text-sm font-medium text-white"
             >
               {field.label}
             </label>

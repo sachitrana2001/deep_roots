@@ -61,7 +61,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <div className="bg-white py-10 relative grid gap-y-20 md:gap-y-32 lg:gap-y-44 overflow-hidden md:py-64">
+    <div className="bg-white py-10 relative grid gap-y-20 md:gap-y-32 lg:gap-y-44 overflow-hidden md:py-20">
       {features.map((feature, i) => (
         <div
           className="flex flex-col lg:grid grid-cols-12 gap-6 lg:gap-9 relative z-10 px-8 md:px-20 xl:px-[104px] "

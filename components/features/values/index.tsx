@@ -21,13 +21,13 @@ const Values: React.FC = () => {
             initial={{
               opacity: 0,
               // if odd index card,slide from right instead of left
-              x: i % 2 === 0 ? 50 : -50,
+              y: 50,
             }}
             whileInView={{
               opacity: 1,
-              x: 0, // Slide in to its original position
+              y: 0, // Slide in to its original position
               transition: {
-                duration: 0.9, // Animation duration
+                duration: 0.5, // Animation duration
               },
             }}
             viewport={{ once: false }}
