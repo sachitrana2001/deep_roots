@@ -50,7 +50,7 @@ export default function page() {
       <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/bg5.png')] bg-cover lg:h-[50vh]">
         <div className="w-full h-full flex flex-col  justify-center items-center bg-blue-600/30 backdrop-brightness-75">
           <span className="text-white text-2xl px-10 md:text-4xl leading-loose text-center md:px-48">
-            Services, We're offering
+            {`Services, We're offering`}
             <p className="text-xl font-semibold md:text-2xl md:mt-3">
               TO MAKING YOUR VISION A REALITY.
             </p>
