@@ -34,7 +34,7 @@ const Footer = () => {
   ];
   return (
     <>
-      <main className="bg-black text-white justify-between px-5  grid grid-rows-3 md:grid-cols-3  md:grid-rows-1 content-center gap-4 md:px-32 py-5">
+      <main className="bg-primary text-white justify-between px-5  grid grid-rows-3 md:grid-cols-3  md:grid-rows-1 content-center gap-4 md:px-32 py-5">
         <section className="flex flex-col justify-center items-center">
           {/* <div className="text-6xl font-light italic font-serif flex items-center">
             <p className="-mr-10">DEEP</p>
@@ -48,12 +48,12 @@ const Footer = () => {
             <p className="-ml-36">ROOTS</p>
           </div> */}
           <Image
-              src="/whiteLogo.png"
-              alt="deep_roots_logo"
-              width={300}
-              height={230}
-              className="md:h-40"
-            />
+            src="/whiteLogo.png"
+            alt="deep_roots_logo"
+            width={300}
+            height={230}
+            className="md:h-40"
+          />
           <p className="text-center md:text-base">
             <Typewriter
               words={[
@@ -70,8 +70,8 @@ const Footer = () => {
             />
           </p>
         </section>
-        <section className="flex flex-col justify-center items-center m-5">
-          <ul className="hidden md:grid grid-cols-3 content-center ml-10 flex items-baseline space-x-4">
+        <section className="flex flex-col justify-between items-center m-5">
+          <ul className="flex justify-between gap-4 flex-wrap md:grid md:grid-cols-3 content-center items-baseline">
             {NAV_LINKS.map((navlink, index) => {
               return (
                 <li key={index}>
@@ -123,7 +123,7 @@ const Footer = () => {
           ))}
         </section>
       </main>
-      <footer className="text-white bg-black p-5 text-center md:px-32">
+      <footer className="text-white bg-primary p-5 text-center md:px-32 border-t border-white">
         Chandigarh, India | Phone: 9888804700 | surender.kumar@deeproots.in
       </footer>
     </>

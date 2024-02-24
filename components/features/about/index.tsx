@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <main className="h-full flex flex-col md:flex-row-reverse  py-10 gap-8  md:py-20 md:justify-center md:px-64 md:h-screen md:gap-20">
+    <main className="h-full flex flex-col md:flex-row-reverse  py-10 gap-8  md:py-20 md:justify-center xl:px-64 md:h-screen md:gap-20">
       <section className="px-5 w-full md:w-2/5 ">
         <h3 className="text-5xl leading-snug  text-rose-700">
           Deeproots since 2011
@@ -26,7 +26,7 @@ const AboutSection = () => {
           height={600}
           alt="about"
           loading="lazy"
-          className="backdrop-brightness-75 rounded-tl-[100px] w-4/5 h-[60vh] md:h-full md:w-full"
+          className="brightness-75 rounded-tl-[100px] w-4/5 h-[60vh] md:h-full md:w-full"
         />
         <aside className="absolute w-2/3 text-base flex bg-white shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] -bottom-10 left-20 gap-4 p-2 md:w-[100%] md:-right-[400px]  md:text-2xl md:p-5">
           <div className="border-r-2 pr-5 border-black w-[100px] md:w-full">

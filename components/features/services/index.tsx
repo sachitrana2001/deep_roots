@@ -7,14 +7,14 @@ import { isEvenMinute } from "@/app/utils";
 const features = [
   {
     title: "ARTIST MANAGEMENT",
-    img:"/assets/artist1.webp",
+    img: "/assets/artist1.webp",
     img2: "/assets/artist2.webp",
     content: `Discover seamless artist management services that elevate your events to new heights. From coordinating performers and handling logistics to drawing contracts and providing technical expertise, we ensure a captivating and unforgettable experience for your audience. Trust our expertise to scout and bring exceptional talent, cater to backstage needs and create extraordinary moments that leave a lasting impression.`,
   },
   {
     title: "LED DISPLAY",
     img: "/assets/bg1.png",
-    img2:"/assets/bg2.png",
+    img2: "/assets/bg2.png",
     content: `Immerse yourself in the action with our cutting-edge LED screens in stadiums. Experience high-definition visuals, real-time updates, sponsor messages and captivating replays that enhance the thrill of the game. Be part of an unparalleled spectator experience that brings the stadium to life like never before.`,
   },
   {
@@ -61,7 +61,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <div className="bg-white py-10 relative grid gap-y-20 md:gap-y-32 lg:gap-y-44 overflow-hidden md:py-20">
+    <div className="bg-white py-10 relative grid gap-y-20 md:gap-y-32 lg:gap-y-44 overflow-hidden md:pb-20">
       {features.map((feature, i) => (
         <div
           className="flex flex-col lg:grid grid-cols-12 gap-6 lg:gap-9 relative z-10 px-8 md:px-20 xl:px-[104px] "
@@ -72,11 +72,11 @@ const ServicesSection = () => {
             className={`absolute items-center h-full w-full hidden lg:grid grid-cols-12 gap-12 lg:gap-9 `}
           >
             <motion.div
-              initial={{ x: i%2 === 1 ? 500 : -500, opacity: 0 }}
+              initial={{ x: i % 2 === 1 ? 500 : -500, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.3 }}
-              className={`h-[55%] lg:h-[70%] w-full bg-rose-700 col-span-12 ${
-                i%2 === 1
+              className={`h-[55%] lg:h-[70%] w-full bg-rose-700 shadow-xl col-span-12 ${
+                i % 2 === 1
                   ? "lg:col-start-8 lg:col-end-13 "
                   : "lg:col-span-6 xl:col-span-5 "
               }`}
@@ -86,18 +86,20 @@ const ServicesSection = () => {
 
           <div
             className={`col-span-12 lg:col-span-6 xl:col-span-5 relative h-[280px] sm:h-[340px] p mx-auto ${
-              i%2 === 1 ? "order-1 lg:order-2 " : ""
+              i % 2 === 1 ? "order-1 lg:order-2 " : ""
             }`}
           >
             <img
               alt={feature.title}
-              src={isEvenMinute() && feature.img2 ? feature?.img2 :feature?.img }
-              className={`cursor-pointer w-full h-full object-cover sm:max-w-[420px] border-8 border-black hover:scale-100`}
+              src={
+                isEvenMinute() && feature.img2 ? feature?.img2 : feature?.img
+              }
+              className={`cursor-pointer w-full h-full object-cover sm:max-w-[420px] border-8 border-gray-200 shadow-xl hover:scale-100`}
             />
           </div>
           <div
             className={`col-span-12 lg:col-span-6 xl:col-span-7 my-auto text-offWhite ${
-              i%2 === 1 ? "order-2 lg:order-1" : ""
+              i % 2 === 1 ? "order-2 lg:order-1" : ""
             }`}
           >
             <motion.div

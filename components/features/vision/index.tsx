@@ -16,10 +16,10 @@ export default function Vision() {
             width={600}
             height={400}
             alt="Image Alt"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover brightness-75"
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-            <h1 className="text-4xl font-bold">Your Text Goes Here</h1>
+            <h1 className="text-4xl font-light">Corporate</h1>
           </div>
         </div>
         <div className="md:row-span-1 md:col-span-4 relative">
@@ -28,10 +28,10 @@ export default function Vision() {
             width={1000}
             height={400}
             alt="Image Alt"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover brightness-50"
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-            <h1 className="text-3xl font-bold">Your Text Goes Here</h1>
+            <h1 className="text-3xl font-light">Parties</h1>
           </div>
         </div>
         <div className="md:col-span-2 relative">
@@ -40,10 +40,10 @@ export default function Vision() {
             width={600}
             height={400}
             alt="Image Alt"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover brightness-50 "
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-            <h1 className="text-2xl font-bold">Your Text Goes Here</h1>
+            <h1 className="text-2xl font-light">Wedding</h1>
           </div>
         </div>
         <div className="md:col-span-2 relative">
@@ -52,10 +52,10 @@ export default function Vision() {
             width={600}
             height={400}
             alt="Image Alt"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover brightness-50"
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-            <h1 className="text-2xl font-bold">Your Text Goes Here</h1>
+            <h1 className="text-2xl font-light">Event Planning</h1>
           </div>
         </div>
       </main>

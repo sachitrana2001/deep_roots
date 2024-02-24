@@ -30,7 +30,7 @@ const ContactSection = () => {
       <section className="w-[100%] h-[300px] bg-center bg-no-repeat overflow-hidden z-1 bg-[url('/assets/ContactUs.jpg')] bg-cover lg:h-[400px]">
         <div className="w-full h-full flex flex-col  justify-center items-center bg-slate-900/20 backdrop-brightness-50">
           <span className="text-white text-2xl px-10 md:text-4xl leading-loose text-center md:px-48">
-           Contact US
+            Contact US
             <p className="text-xl font-semibold md:text-2xl md:mt-3">
               TO MAKING YOUR VISION A REALITY.
             </p>
@@ -65,7 +65,7 @@ const ContactSection = () => {
           >
             <div className="max-w-[100%]  md:max-w-[500px]  flex justify-center items-center  ">
               <div>
-                <p className="font-[700] w-full text-[36px] mb-[20px] text-black ">
+                <p className="font-[700] w-full text-[36px] mb-[20px] text-primary ">
                   React Us? Please Drop a Message
                   <br />
                 </p>
@@ -79,7 +79,7 @@ const ContactSection = () => {
                     <div key={index} className="mb-[16px] flex">
                       {/* <div className="mr-[18px]"> {<contact.icon />}</div> */}
                       <ul>
-                        <h3 className="font-[700] text-black">
+                        <h3 className="font-[700] text-primary">
                           {contact.title}
                         </h3>
                         <li className="text-grey-light text-[14px]">
@@ -94,7 +94,7 @@ const ContactSection = () => {
                   {SOCIAL_LOGO.map((social, index) => {
                     return (
                       <a
-                        className=" bg-[black] h-[50px] w-[50px] flex justify-center items-center rounded-[50%] shadow-2xl"
+                        className=" bg-primary h-[50px] w-[50px] flex justify-center items-center rounded-[50%] shadow-2xl"
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -114,7 +114,7 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-[100%] rounded-2xl shadow-xl bg-black p-5 ">
+            <div className=" w-[100%] rounded-2xl shadow-xl bg-primary p-5 ">
               <FormFields />
             </div>
           </motion.div>

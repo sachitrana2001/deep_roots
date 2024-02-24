@@ -9,24 +9,34 @@ import { BiUser } from "react-icons/bi";
 interface HomeItem {
   icon: ReactNode;
   title: string;
+  bgImage: string;
+  color: string;
 }
 
 export const HOME: HomeItem[] = [
   {
     icon: React.createElement(AiOutlineCalendar, { size: 35 }),
     title: "10+ years of market experience",
+    bgImage: "[url('/assets/bg2.png')]",
+    color: "rose",
   },
   {
     icon: React.createElement(TfiRulerPencil, { size: 35 }),
     title: "Unique technologies & modern approach",
+    bgImage: "[url('/assets/bg5.png')]",
+    color: "blue",
   },
   {
     icon: React.createElement(VscFileSubmodule, { size: 35 }),
     title: "350+ successful events",
+    bgImage: "[url('/assets/bg5.png')]",
+    color: "rose",
   },
   {
     icon: React.createElement(BiUser, { size: 35 }),
     title: "Customer satisfaction is our top priority",
+    bgImage: "[url('/assets/bg2.png')]",
+    color: "blue",
   },
 ];
 
@@ -36,8 +46,8 @@ export const NAV_LINKS = [
     route: "/",
   },
   {
-    title: "WORK",
-    route: "/work",
+    title: "GALLERY",
+    route: "/gallery",
   },
   {
     title: "SERVICES",
@@ -68,10 +78,6 @@ export const SOCIAL_LOGO = [
     name: "Instagram",
     src: "/assets/insta.png",
     link: "https://www.instagram.com/deeproots_events/",
-  },
-  {
-    name: "Twitter",
-    src: "/assets/twitter.png",
   },
   {
     name: "Whatsapp",
@@ -143,12 +149,43 @@ export const GALLERY = [
   },
   {
     id: 5,
-    src: "/assets/bg1.png",
+    src: "/assets/bg5.png",
     alt: "Image 5",
   },
   {
     id: 6,
-    src: "/assets/bg2.png",
+    src: "/assets/bg6.webp",
+    alt: "Image 6",
+  },
+  {
+    id: 7,
+    src: "/assets/bg7.webp",
+    alt: "Image 1",
+  },
+  {
+    id: 8,
+    src: "/assets/bg8.webp",
+    alt: "Image 2 ",
+  },
+
+  {
+    id: 9,
+    src: "/assets/th.jpeg",
+    alt: "Image 3",
+  },
+  {
+    id: 10,
+    src: "/assets/bg3.png",
+    alt: "Image 4",
+  },
+  {
+    id: 11,
+    src: "/assets/bg11.webp",
+    alt: "Image 5",
+  },
+  {
+    id: 12,
+    src: "/assets/bg1.png",
     alt: "Image 6",
   },
 ];

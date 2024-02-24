@@ -100,7 +100,7 @@ const FormFields: React.FC = () => {
             <ErrorMessage
               name={field.name}
               component="div"
-              className="text-red-500 text-[10px]"
+              className="text-red-500 text-[10px] pt-2"
             />
           </div>
         ))}
