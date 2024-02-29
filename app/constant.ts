@@ -129,63 +129,63 @@ export const GALLERY = [
   {
     id: 1,
     src: "/assets/bg1.png",
-    alt: "Image 1",
+    alt: "Gallery 1",
   },
   {
     id: 2,
     src: "/assets/bg2.png",
-    alt: "Image 2 ",
+    alt: "Gallery 2 ",
   },
 
   {
     id: 3,
     src: "/assets/bg3.png",
-    alt: "Image 3",
+    alt: "Gallery 3",
   },
   {
     id: 4,
     src: "/assets/bg4.png",
-    alt: "Image 4",
+    alt: "Gallery 4",
   },
   {
     id: 5,
     src: "/assets/bg5.png",
-    alt: "Image 5",
+    alt: "Gallery 5",
   },
   {
     id: 6,
     src: "/assets/bg6.webp",
-    alt: "Image 6",
+    alt: "Gallery 6",
   },
   {
     id: 7,
     src: "/assets/bg7.webp",
-    alt: "Image 1",
+    alt: "Gallery 7",
   },
   {
     id: 8,
     src: "/assets/bg8.webp",
-    alt: "Image 2 ",
+    alt: "Gallery 8 ",
   },
 
   {
     id: 9,
     src: "/assets/th.jpeg",
-    alt: "Image 3",
+    alt: "Gallery 9",
   },
   {
     id: 10,
     src: "/assets/bg3.png",
-    alt: "Image 4",
+    alt: "Gallery 10",
   },
   {
     id: 11,
     src: "/assets/bg11.webp",
-    alt: "Image 5",
+    alt: "Gallery 11",
   },
   {
     id: 12,
     src: "/assets/bg1.png",
-    alt: "Image 6",
+    alt: "Gallery 12",
   },
 ];

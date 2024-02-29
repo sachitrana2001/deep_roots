@@ -46,12 +46,9 @@ const initialValues = {
 const FormFields: React.FC = () => {
   useEffect(() => emailjs.init("uzwFkNu2e3d3Yqofv"), []);
   const handleSubmit = (values: typeof initialValues) => {
-    // Log form values (replace with your own logic)
-    console.log("Form Values:", values)
-
     emailjs.send("service_cdywi3z","template_dj90hcg",values).then(
       (result) => {
-        console.log(result.text);
+        console.log(result);
       },
       (error) => {
         console.log(error.text);

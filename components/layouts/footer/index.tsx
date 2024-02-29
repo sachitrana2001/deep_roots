@@ -28,7 +28,7 @@ const Footer = () => {
     {
       id: 4,
       src: "/assets/bg3.png",
-      alt: "Image 1",
+      alt: "Image 4",
       title: "Nationwide Event Management Services",
     },
   ];

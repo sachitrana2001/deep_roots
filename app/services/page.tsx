@@ -62,7 +62,7 @@ export default function page() {
         Our Services
       </h3>
       <ServicesSection />
-      <CurvedSlider />
+      {/* <CurvedSlider /> */}
     </main>
   );
 }

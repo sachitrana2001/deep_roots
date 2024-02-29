@@ -89,7 +89,7 @@ const ServicesSection = () => {
               i % 2 === 1 ? "order-1 lg:order-2 " : ""
             }`}
           >
-            <img
+            <Image
               alt={feature.title}
               src={
                 isEvenMinute() && feature.img2 ? feature?.img2 : feature?.img

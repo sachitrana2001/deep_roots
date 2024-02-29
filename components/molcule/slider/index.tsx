@@ -59,7 +59,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
     >
       {images?.map((image, index) => (
         <SwiperSlide key={index} className={slideClass}>
-          <Image fill={true} src={image?.src} alt={image?.alt} className={imageClass} />
+          <Image fill={true} src={image?.src} alt={image?.alt} sizes='auto' className={imageClass} />
           <div
             className={`w-full h-full flex flex-col  justify-center items-center  ${image?.color ?`bg-${image.color}-600/30 backdrop-brightness-75` : ""}
               px-10 md:px-0`}

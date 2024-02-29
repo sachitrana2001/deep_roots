@@ -48,6 +48,7 @@ const Navbar = () => {
                 alt="deep_roots_logo"
                 width={150}
                 height={100}
+                sizes='auto'
               />
             </div>
           </div>
