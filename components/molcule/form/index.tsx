@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import emailjs from "@emailjs/browser";
 import * as Yup from "yup";
@@ -44,28 +44,19 @@ const initialValues = {
 };
 
 const FormFields: React.FC = () => {
+  useEffect(() => emailjs.init("uzwFkNu2e3d3Yqofv"), []);
   const handleSubmit = (values: typeof initialValues) => {
     // Log form values (replace with your own logic)
-    console.log("Form Values:", values);
+    console.log("Form Values:", values)
 
-    // Create the email body with form values
-    console.log("Form Values:", values);
-
-    emailjs
-      .sendForm(
-        "service_6ekxd05",
-        "template_r5bsb4h",
-        values.name,
-        "M7lxxIWPV689inK7H"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.send("service_cdywi3z","template_dj90hcg",values).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
     // For testing purposes, you might want to remove the following line in production
     // window.location.href = mailtoLink;
   };
